@@ -19,7 +19,9 @@ def reloadmultiple():
                 if 'confirm' in Output1:
                     kp.write("\r\n")
                     print "We just Rebooted" 
-                else 
-                    print "not sure why we cant hit the reboot prompt"   
+                else: 
+                    print "not sure why we cant hit the reboot prommt"              
+                    
+                       
 
 reloadmultiple()
