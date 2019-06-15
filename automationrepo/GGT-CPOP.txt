@@ -1,0 +1,54 @@
+**************A-LIV03-GGR**************
+
+interface Tunnel110
+ description PRIMARY GRE TUNNEL to A-LIV03-GGR-TUNNEL110
+ bandwidth 56
+ ip address 172.20.72.37 255.255.255.252
+ no ip proxy-arp
+ ip ospf cost 1000
+ ip ospf hello-interval 8
+ ip ospf dead-interval 24
+ tunnel source Loopback2
+ tunnel destination 10.160.17.117
+ no cdp enable
+!
+interface Tunnel1010
+ description PRIMARY GRE TUNNEL to A-LIV03-GGR TUNNEL210
+ ip address 172.20.214.37 255.255.255.252
+ no ip proxy-arp
+ ip ospf cost 1000
+ ip ospf hello-interval 8
+ ip ospf dead-interval 24
+ tunnel source Loopback22
+ tunnel destination 172.23.203.166 
+ no cdp enable
+!
+	
+#Tunnels 1000 and 2000:
+**************A-NYC03-GGR**************
+interface tunnel 210
+!description ALTERNATE GRE TUNNEL to  A-NYC03-GGR via SRT
+ bandwidth 56
+ ip address 172.20.41.37 255.255.255.252
+ no ip proxy-arp
+ ip ospf cost 5000
+ ip ospf hello-interval 8
+ ip ospf dead-interval 24
+ tunnel source Loopback2
+ tunnel destination 10.160.17.117
+ no cdp enable
+!
+interface tunnel 2010
+ description ALTERNATE GRE TUNNEL to A-NYC03-GGR via SRT
+ bandwidth 56
+ ip address 172.20.234.37 255.255.255.252
+ no ip proxy-arp
+  ip ospf cost 5000
+ ip ospf hello-interval 8
+ ip ospf dead-interval 24
+ tunnel source Loopback22
+ tunnel destination 172.23.203.166 
+ no cdp enable
+!	
+
+

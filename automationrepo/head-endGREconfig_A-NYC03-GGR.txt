@@ -1,0 +1,39 @@
+
+*********************A-NYC03-GGR Config****************************
+
+int tunnel 1024 
+ description ALTERNATE GRE TUNNEL to FPOB-RPOP via SRT
+ bandwidth 56
+ ip address 172.20.218.93 255.255.255.252
+ no ip proxy-arp
+ ip tcp adjust-mss 1360
+ ip ospf dead-interval 24
+ ip ospf hello-interval 8
+ ip ospf cost 5000
+ tunnel source Loopback22
+ tunnel destination 172.23.203.170
+
+
+
+
+
+
+
+
+
+
+
+
+*********************A-LIV03-GGR Config****************************
+int tunnel 2024
+ description ALTERNATE GRE TUNNEL to FPOB-RPOP via SRT
+ bandwidth 56
+ ip address 172.20.230.93 255.255.255.252
+ no ip proxy-arp
+ ip tcp adjust-mss 1360
+ ip ospf dead-interval 24
+ ip ospf hello-interval 8
+ ip ospf cost 5000
+ tunnel source Loopback22
+ tunnel destination 172.23.203.170
+
