@@ -17,6 +17,7 @@ def normalizeMAC(Macaddress):
                 entry = mac[:2]
                 mac = mac[2:]
                 newmac.append(entry)
+            correctmac = separator.join(newmac)
             print (newmac)
 
         elif Macaddress[2] == '-':
