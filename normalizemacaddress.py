@@ -5,12 +5,12 @@ from __future__ import print_function, unicode_literals
 
 
 def normalizeMAC(Macaddress):
-    Macaddress 
+     
 
     try: 
 
         if Macaddress[4]==".":
-            mac = Macaddress[1].upper().replace(".","")
+            mac = Macaddress.upper().replace(".","")
             separator = ":"
             newmac = []
             while len(mac) > 0:
@@ -18,11 +18,13 @@ def normalizeMAC(Macaddress):
                 mac = mac[2:]
                 newmac.append(entry)
             correctmac = separator.join(newmac)
-            print (newmac)
+            string.append(correctmac)
+
+            
 
         elif Macaddress[2] == '-':
             mac = Macaddress.upper().replace("-",":")
-            print (mac)
+            #print (mac)
         elif Macaddress[1] == ":" or "-" or ".":
             mac = Macaddress.upper().replace(".",":").replace("-",":")
             separator = "0"
@@ -32,11 +34,11 @@ def normalizeMAC(Macaddress):
                 mac = mac[2:]
                 newmac.append(entry)
             correctmac = separator.join(newmac)
-            print (correctmac)
+
 
     except IndexError:
        print ("Completely off format, please try to put in a mac address")
-
+    
 normalizeMAC("a.b.c.d.e.f") 
 
 
