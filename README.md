@@ -1,2 +1,2 @@
 # networkautomationex
-Will post network AUtomationcode
+simple network device status parsing
